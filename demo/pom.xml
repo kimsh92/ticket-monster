@@ -19,6 +19,7 @@
 
         https://access.redhat.com/documentation/en-US/JBoss_Enterprise_Application_Platform/6.3/html-single/Development_Guide
     -->
+    <localRepository>C:\Users\thomas\.m2\repository</localRepository>
     <repositories>
         <repository>
             <id>redhat-techpreview-all-repository</id>
