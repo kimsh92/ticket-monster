@@ -9,16 +9,13 @@
     <description>A starter HTML5 + REST webapp project for use on JBoss EAP.</description>
 
     <!-- Activate JBoss Product Maven repository.
-
         NOTE: Configuring the Maven repository in the pom.xml file is not a recommended procedure
         and is only done here to make it easier to use the quickstarts.
-
         For more information about how to configure Maven for your application,
         see the section entitled 'Use the Maven Repository'
         in the Development Guide for JBoss EAP 6 located here:
-
         https://access.redhat.com/documentation/en-US/JBoss_Enterprise_Application_Platform/6.3/html-single/Development_Guide
-
+    -->
     <repositories>
         <repository>
             <id>redhat-techpreview-all-repository</id>
@@ -44,8 +41,7 @@
             </snapshots>
         </pluginRepository>
     </pluginRepositories>
-        -->
-        
+
     <properties>
         <!-- Explicitly declaring the source encoding eliminates the following 
             message: -->
@@ -88,18 +84,21 @@
                 <artifactId>jboss-javaee-6.0-with-tools</artifactId>
                 <version>${version.jboss.bom.wfk}</version>
                 <type>pom</type>
+                <scope>import</scope>
             </dependency>
             <dependency>
                 <groupId>org.jboss.bom.eap</groupId>
                 <artifactId>jboss-javaee-6.0-with-hibernate</artifactId>
                 <version>${version.jboss.bom.eap}</version>
                 <type>pom</type>
+                <scope>import</scope>
             </dependency>
             <dependency>
                 <groupId>org.jboss.bom.eap</groupId>
                 <artifactId>jboss-javaee-6.0-with-resteasy</artifactId>
                 <version>${version.jboss.bom.eap}</version>
                 <type>pom</type>
+                <scope>import</scope>
             </dependency>
         </dependencies>
     </dependencyManagement>
@@ -114,16 +113,19 @@
         <dependency>
             <groupId>javax.enterprise</groupId>
             <artifactId>cdi-api</artifactId>
+            <scope>provided</scope>
         </dependency>
         
         <dependency>
             <groupId>javax.inject</groupId>
             <artifactId>javax.inject</artifactId>
+            <scope>provided</scope>
         </dependency>
         
         <dependency>
             <groupId>javax.validation</groupId>
             <artifactId>validation-api</artifactId>
+            <scope>provided</scope>
         </dependency>
        
         <!-- Import the Common Annotations API (JSR-250), we use provided 
@@ -131,6 +133,7 @@
         <dependency>
             <groupId>org.jboss.spec.javax.annotation</groupId>
             <artifactId>jboss-annotations-api_1.1_spec</artifactId>
+            <scope>provided</scope>
         </dependency>
 
         <!-- Import the JAX-RS API, we use provided scope as the API is included 
@@ -138,6 +141,7 @@
         <dependency>
             <groupId>org.jboss.spec.javax.ws.rs</groupId>
             <artifactId>jboss-jaxrs-api_1.1_spec</artifactId>
+            <scope>provided</scope>
         </dependency>
 
         <!-- Import the JPA API, we use provided scope as the API is included 
@@ -145,6 +149,7 @@
         <dependency>
             <groupId>org.hibernate.javax.persistence</groupId>
             <artifactId>hibernate-jpa-2.0-api</artifactId>
+            <scope>provided</scope>
         </dependency>
 
         <!-- Import the EJB API, we use provided scope as the API is included 
@@ -152,6 +157,7 @@
         <dependency>
             <groupId>org.jboss.spec.javax.ejb</groupId>
             <artifactId>jboss-ejb-api_3.1_spec</artifactId>
+            <scope>provided</scope>
         </dependency>
 
         <!-- Import the Servlet API, we use provided scope as the API is 
@@ -159,6 +165,7 @@
         <dependency>
             <groupId>org.jboss.spec.javax.servlet</groupId>
             <artifactId>jboss-servlet-api_3.0_spec</artifactId>
+            <scope>provided</scope>
         </dependency>
 
         <!-- JSR-303 (Bean Validation) Implementation -->
@@ -184,12 +191,14 @@
         <dependency>
             <groupId>org.hibernate</groupId>
             <artifactId>hibernate-jpamodelgen</artifactId>
+            <scope>provided</scope>
         </dependency>
 
         <!-- Needed for running tests (you may also use TestNG) -->
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
+            <scope>test</scope>
         </dependency>
 
         <!-- Optional, but highly recommended -->
@@ -198,17 +207,20 @@
         <dependency>
             <groupId>org.jboss.arquillian.junit</groupId>
             <artifactId>arquillian-junit-container</artifactId>
+            <scope>test</scope>
         </dependency>
 
         <dependency>
             <groupId>org.jboss.arquillian.protocol</groupId>
             <artifactId>arquillian-protocol-servlet</artifactId>
+            <scope>test</scope>
         </dependency>
         
         <dependency>
             <groupId>org.jboss.shrinkwrap.resolver</groupId>
             <artifactId>shrinkwrap-resolver-depchain</artifactId>
             <type>pom</type>
+            <scope>test</scope>
         </dependency>
 
         <!-- RESTEasy dependencies that bring in Jackson Core and RESTEasy APIs+SPIs, which we use for
@@ -216,10 +228,12 @@
         <dependency>
             <groupId>org.jboss.resteasy</groupId>
             <artifactId>resteasy-jackson-provider</artifactId>
+            <scope>provided</scope>
         </dependency>
         <dependency>
             <groupId>org.jboss.resteasy</groupId>
             <artifactId>resteasy-jaxrs</artifactId>
+            <scope>provided</scope>
         </dependency>
 
     </dependencies>
